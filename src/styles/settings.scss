@@ -1,0 +1,21 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Configures SASS variables and Vuetify overwrites
+ */
+
+// https://vuetifyjs.com/features/sass-variables/`
+// @use 'vuetify/settings' with ($color-pack: true, );
+.v-field--variant-solo-inverted {
+    background: #37364E;
+    box-shadow: none;
+
+    &.v-field--focused {
+        background: #fff;
+
+        .v-field__overlay {
+            background: #fff;
+        }
+    }
+
+}
