@@ -3,19 +3,20 @@
     <div class="top-header bg-background">
       <div class="d-flex align-center justify-space-between pl-7 pr-5 logo-box">
         <p class="text-h5 font-weight-bold">Unidoge</p>
-        <div class="d-flex align-center justify-center network-link pointer">dogechain <v-icon icon="mdi-chevron-down"
-            size="16" />
+        <div class="d-flex align-center justify-center network-link pointer" @click="goNet">dogechain <v-icon
+            icon="mdi-chevron-down" size="16" />
         </div>
       </div>
       <div class="d-flex align-center justify-space-between pl-7 pr-5 account-box">
         <div class="account-status">Linked</div>
-        <div class=" d-flex flex-column align-center text-center">
-          <div class="d-flex align-center text-h6 pointer">Account1<v-icon icon="mdi-chevron-down" size="24" /></div>
-          <div class="d-flex align-center pointer text-secondary">0x4asd...das1<v-icon icon="mdi-content-copy"
-              size="24" />
-          </div>
+        <div class=" d-flex flex-column align-center text-center ">
+          <div class="d-flex align-center text-h6 pointer" @click="goAccount">Account1<v-icon icon="mdi-chevron-down"
+              size="24" /></div>
+          <copy content="0x4asd...das1" class="d-flex align-center  text-secondary">0x4asd...das1<v-icon
+              icon="mdi-content-copy" size="24" />
+          </copy>
         </div>
-        <div class="d-flex align-center justify-center pointer">
+        <div class="d-flex align-center justify-center ">
           <v-btn color="secondary" variant="plain" icon="mdi-cog-outline"></v-btn>
         </div>
       </div>
@@ -31,14 +32,15 @@
       </div>
       <v-row class="mb-5">
         <v-col cols="4">
-          <v-btn height="66" color="#37364E" prepend-icon="mdi-swap-horizontal" size="x-large" block>
+          <v-btn height="66" color="#37364E" prepend-icon="mdi-qrcode" size="x-large" block to="/receive">
             <template #prepend>
               <v-icon class="mr-n2" />
             </template>
             Receive</v-btn>
         </v-col>
         <v-col cols="4">
-          <v-btn height="66" color="#37364E" prepend-icon="mdi-swap-horizontal" size="x-large" block><template #prepend>
+          <v-btn height="66" color="#37364E" prepend-icon="mdi-swap-horizontal" size="x-large" block to="/send"><template
+              #prepend>
               <v-icon class="mr-n2" />
             </template>Send</v-btn>
         </v-col>
@@ -49,8 +51,8 @@
             </template>History</v-btn>
         </v-col>
       </v-row>
-      <v-tabs v-model="activeTab" color="#F05C48" class="mb-7">
-        <v-tab v-for="tab in tabs" :key="tab.value">{{ tab.label }}</v-tab>
+      <v-tabs v-model="activeTab" density="compact" color="#F05C48" class="mb-7">
+        <v-tab v-for="tab in tabs" :key="tab.value" class="text-body-1">{{ tab.label }}</v-tab>
       </v-tabs>
       <div class="token-grid">
         <div class="" v-for="i in 20" :key="i">
@@ -64,9 +66,19 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { toast } from '@/utils'
+import Copy from '@/components/Copy.vue';
 const hideDetail = ref(true)
 const tabs = [{ label: 'All', value: 'all' }, { label: 'Drc-20', value: 'drc' },]
 const activeTab = ref('all')
+const router = useRouter()
+const goAccount = () => {
+  router.push('/switchAccount')
+}
+const goNet = () => {
+  router.push('/switchNetwork')
+}
 </script>
 <style lang="scss">
 .top-header {

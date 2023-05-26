@@ -1,3 +1,19 @@
 .pointer {
     cursor: pointer;
 }
+
+.Vue-Toastification__container.top-center {
+    top: 1em !important;
+}
+
+.Vue-Toastification__toast.my-custom-toast {
+    background-color: black;
+    width: auto !important;
+    min-width: 0;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 14px 10px;
+    min-height: 0;
+    border-radius: 8px;
+}

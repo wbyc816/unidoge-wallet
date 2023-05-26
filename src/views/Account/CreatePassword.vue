@@ -10,19 +10,20 @@
                 <v-text-field class="mb-8" v-model="cpassword" :type="showPassword1 ? 'text' : 'password'" :rules="rules"
                     placeholder="Confirm Password" :append-inner-icon="showPassword1 ? 'mdi-eye' : 'mdi-eye-off'"
                     @click:append-inner="showPassword1 = !showPassword1"></v-text-field>
-                <linear-btn type="submit" block size="x-large">Create new wallet</linear-btn>
+                <linear-btn type="submit" block size="x-large">Create Password</linear-btn>
             </v-form>
         </v-sheet>
     </div>
 </template>
 <script setup lang='ts'>
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { ref } from 'vue';
 
 const router = useRouter()
+const route = useRoute()
 const password = ref('')
 const cpassword = ref('')
-
+console.log(route)
 const showPassword = ref(false)
 const showPassword1 = ref(false)
 const rules = [
@@ -30,7 +31,12 @@ const rules = [
     () => password.value === cpassword.value || 'Two passwords do not match'
 ]
 const submit = () => {
-    router.push('/createPhrase')
+    if (route.query.type === 'import') {
+        router.push('/importPhrase')
+
+    } else {
+        router.push('/createPhrase')
+    }
 }
 </script>
 <style lang='scss'>

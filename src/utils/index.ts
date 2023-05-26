@@ -1,3 +1,5 @@
+import { useToast } from "vue-toastification";
+
 export const CopyText = (text = '') => {
     if (navigator.clipboard) {
         // clipboard api 复制
@@ -19,3 +21,7 @@ export const CopyText = (text = '') => {
         document.body.removeChild(textarea);
     }
 }
+
+const toast = useToast()
+
+export { toast }
