@@ -44,7 +44,10 @@
                     Copy psbt transaction data
                 </Copy>
             </div>
-            <linear-btn size="x-large" type="submit" width="456" class="bottom-btn">Sign&Send</linear-btn>
+            <div class=" d-flex align-center justify-center px-8 bottom-btn w-100">
+                <linear-btn size="x-large" type="submit" maxWidth="456" width="100%" block>Sign&Send</linear-btn>
+
+            </div>
         </div>
     </div>
 </template>

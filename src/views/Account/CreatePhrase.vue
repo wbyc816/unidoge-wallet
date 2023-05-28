@@ -1,5 +1,5 @@
 <template>
-    <div class=" w-100 h-100 d-flex flex-column align-center pt-4">
+    <div class=" w-100 h-100 d-flex flex-column align-center pt-4 pb-2">
         <Header title="Create new wallet" />
         <v-form validate-on="submit" @submit.prevent="submit" class="d-flex flex-column align-center px-8">
             <p class="text-h4 font-weight-bold mb-5">Secret Recovery Phrase</p>
@@ -11,7 +11,7 @@
                 <v-icon icon="mdi-content-copy" size="20" color="grey" class="mr-2" />
                 copy to clipboard
             </copy>
-            <linear-btn size="x-large" :disabled="!isSaved" type="submit" width="403" class="mt-8">Create new
+            <linear-btn size="x-large" :disabled="!isSaved" type="submit" maxWidth="403" block class="mt-8">Create new
                 wallet</linear-btn>
         </v-form>
     </div>
@@ -37,6 +37,6 @@ const onCopy = () => {
 </script>
 <style lang='scss'>
 .copy-box {
-    width: 264px;
+    max-width: 264px;
 }
 </style>

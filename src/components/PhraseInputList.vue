@@ -1,5 +1,5 @@
 <template>
-    <v-row justify="center" class="pr-6 ml-n6" no-gutters>
+    <v-row justify="center" class="pr-4 ml-n4" no-gutters>
         <v-col v-for="(value, i) in props.modelValue" :key="i" cols="6" class=" d-flex align-center">
             <p class="text-h6 input-index text-right">{{ i + 1 }}.</p>
             <v-text-field density="compact" :model-value="value" @update:model-value="(value) => onChange(value, i)"
@@ -30,7 +30,7 @@ const onChange = (value: string, i: number) => {
 </script>
 <style lang='scss'>
 .input-index {
-    flex-basis: 70px;
+    flex-basis: 40px;
     padding-right: 6px;
     padding-bottom: 22px;
 }

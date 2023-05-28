@@ -1,6 +1,6 @@
 <template>
     <div class=" w-100 h-100 d-flex align-center justify-center">
-        <v-sheet width="400" class="mx-auto">
+        <v-sheet maxwidth="408" width="100%" class="mx-auto px-10">
             <v-form validate-on="submit" @submit.prevent="submit">
 
                 <p class=" text-h4 text-center  font-weight-bold  mb-10">Create a Password</p>

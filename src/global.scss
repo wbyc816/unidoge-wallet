@@ -1,3 +1,8 @@
+// hide scrollbar 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -16,4 +21,10 @@
     padding: 14px 10px;
     min-height: 0;
     border-radius: 8px;
+}
+
+@media screen and (max-width:510px) {
+    html {
+        font-size: calc(0px + (100vw) / 31.875) !important;
+    }
 }

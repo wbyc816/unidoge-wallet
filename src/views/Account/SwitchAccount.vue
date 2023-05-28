@@ -41,7 +41,7 @@ const goEdit = () => {
     router.push('/editName');
 }
 </script>
-<style lang='scss'>
+<style lang='scss' scoped>
 .account-box {
     background: #37364E;
     border-radius: 5px;

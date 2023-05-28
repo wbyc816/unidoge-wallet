@@ -1,6 +1,6 @@
 <template>
     <div class=" w-100 h-100 d-flex align-center justify-center">
-        <v-sheet width="400" class="mx-auto">
+        <v-sheet maxWidth="400" width="100%" class="mx-auto px-6">
             <v-form validate-on="submit" @submit.prevent="submit">
                 <p class="text-h3 font-weight-bold text-center mb-8">UNIDOGE</p>
                 <p class=" text-h5 text-center  font-weight-bold  mb-10">Enter your Password</p>

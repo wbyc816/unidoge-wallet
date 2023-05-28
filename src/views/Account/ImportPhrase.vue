@@ -1,12 +1,12 @@
 <template>
-    <div class=" w-100 h-100 d-flex flex-column align-center pt-4">
+    <div class=" w-100 h-100 d-flex flex-column align-center pt-4 pb-2">
         <Header title="Restore from mnemonics" />
         <v-form validate-on="submit" @submit.prevent="submit" class="d-flex flex-column align-center px-8">
             <p class="text-h4 font-weight-bold mb-5">Secret Recovery Phrase</p>
             <p class="text-h6 font-weight-bold mb-5 text-center px-8" style="color:#9D99C2">Import an existing wallet with
                 your 12 word secret recovery phrase</p>
             <phrase-input-list v-model="phraseList" />
-            <linear-btn size="x-large" :disabled="!isSaved" type="submit" width="403" class="mt-8">Import
+            <linear-btn size="x-large" type="submit" maxWidth="403" block class="mt-8">Import
                 wallet</linear-btn>
         </v-form>
     </div>

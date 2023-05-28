@@ -1,7 +1,7 @@
 <template>
-    <div class=" w-100 h-100 d-flex flex-column align-center pt-4">
+    <div class=" w-100 h-100 d-flex flex-column align-center pt-4 pb-16">
         <Header title="Send Doge" bottom-bottom />
-        <v-form class="w-100 px-8 text-h6" validate-on="submit" @submit.prevent="submit">
+        <v-form class="w-100 px-8 text-h6 pb-16" validate-on="submit" @submit.prevent="submit">
             <div class="d-flex align-center mb-1">
                 <p class="input-title">Send to</p>
                 <v-text-field v-model="address" color="white" placeholder="address. did..."
@@ -35,7 +35,10 @@
             </div>
             <v-text-field v-model="feeList[3].value" type="number" placeholder="DOGE" color="white" hide-details
                 v-if="activeFee === 3" />
-            <linear-btn size="x-large" type="submit" width="456" class="bottom-btn">Next</linear-btn>
+            <div class=" d-flex align-center justify-center px-8 bottom-btn w-100">
+                <linear-btn size="x-large" type="submit" maxWidth="403" width="100%" block class="">Next</linear-btn>
+
+            </div>
         </v-form>
     </div>
 </template>

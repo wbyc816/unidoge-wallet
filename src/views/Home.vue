@@ -3,7 +3,7 @@
     <div class="top-header bg-background">
       <div class="d-flex align-center justify-space-between pl-7 pr-5 logo-box">
         <p class="text-h5 font-weight-bold">Unidoge</p>
-        <div class="d-flex align-center justify-center network-link pointer" @click="goNet">dogechain <v-icon
+        <div class="d-flex align-center justify-center network-link pointer py-2 px-8" @click="goNet">dogechain <v-icon
             icon="mdi-chevron-down" size="16" />
         </div>
       </div>
@@ -13,7 +13,7 @@
           <div class="d-flex align-center text-h6 pointer" @click="goAccount">Account1<v-icon icon="mdi-chevron-down"
               size="24" /></div>
           <copy content="0x4asd...das1" class="d-flex align-center  text-secondary">0x4asd...das1<v-icon
-              icon="mdi-content-copy" size="24" />
+              icon="mdi-content-copy" size="large" />
           </copy>
         </div>
         <div class="d-flex align-center justify-center ">
@@ -31,20 +31,20 @@
         <p class="text-h6 font-weight-bold">{{ hideDetail ? '*******' : '$20.12 USD' }}</p>
       </div>
       <v-row class="mb-5">
-        <v-col cols="4">
+        <v-col cols="4" class="link-col">
           <v-btn height="66" color="#37364E" prepend-icon="mdi-qrcode" size="x-large" block to="/receive">
             <template #prepend>
               <v-icon class="mr-n2" />
             </template>
             Receive</v-btn>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="4" class="link-col">
           <v-btn height="66" color="#37364E" prepend-icon="mdi-swap-horizontal" size="x-large" block to="/send"><template
               #prepend>
               <v-icon class="mr-n2" />
             </template>Send</v-btn>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="4" class="link-col">
           <v-btn height="66" color="#37364E" prepend-icon="mdi-clock-time-four-outline" size="x-large" block><template
               #prepend>
               <v-icon class="mr-n2" />
@@ -89,8 +89,8 @@ const goNet = () => {
 }
 
 .network-link {
-  height: 34px;
-  width: 157px;
+  // height: 34px;
+  // width: 157px;
   border: 1px solid #423A6D;
   border-radius: 20px;
 }
@@ -123,8 +123,8 @@ const goNet = () => {
 }
 
 .account-panel {
-  height: 155px;
-  padding: 10px 28px 0 32px;
+  // height: 155px;
+  padding: 10px 28px 30px 32px;
   background: linear-gradient(90deg, #1846BA 3.23%, #4CA8B7 100%);
   border-radius: 10px;
 }
@@ -132,8 +132,8 @@ const goNet = () => {
 .token-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 13px;
-  grid-column-gap: 23px;
+  grid-row-gap: 0.8rem;
+  grid-column-gap: 1.25rem;
 }
 
 .token-content {
@@ -144,5 +144,9 @@ const goNet = () => {
 .token-label {
   height: 38px;
   background-color: #6A688A;
+}
+
+.link-col {
+  padding: 0.75rem;
 }
 </style>

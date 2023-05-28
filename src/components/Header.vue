@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar color="transparent" elevation="0" :class="{ 'border-bottom': props.bottomBottom }">
+    <v-app-bar color="rgb(24,23,41)" elevation="0" :class="{ 'border-bottom': props.bottomBottom }">
         <template #prepend>
             <v-btn variant="text" width="93" color="white" style="background-color: transparent;" :ripple="false"
                 density="compact" class="pl-1 pr-3" height="50" @click="router.go(-1)">
